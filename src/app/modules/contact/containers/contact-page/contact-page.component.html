@@ -8,6 +8,7 @@
       class="form-control"
       [ngClass]="{ 'is-invalid': submitted && f.name.errors }"
       id="name"
+      autocomplete='name'
       aria-describedby="nameHelp"
       placeholder="Enter name">
     <small id="nameHelp" class="form-text text-muted">We'll never share your data with anyone else. 🤥</small>
@@ -22,6 +23,7 @@
       type="email"
       class="form-control"
       id="email"
+      autocomplete='email'
       aria-describedby="emailHelp"
       placeholder="Enter email"
       formControlName="email"

@@ -1,5 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {HomeService} from '@modules/home/home.service';
+import {ActivatedRoute} from '@angular/router';
 
 @Component({
   selector: 'app-home-page',
@@ -19,11 +20,24 @@ export class HomePageComponent implements OnInit {
 
   users: any;
 
-  constructor(private homeService: HomeService) {
+  messageFromResolver: any;
+
+  constructor(
+    private route: ActivatedRoute,
+    private homeService: HomeService
+  ) {
   }
 
   ngOnInit() {
     this.homeService.getUsers('alex').subscribe(users => this.users = users);
+
+    this.messageFromResolver = this.route.snapshot.data.message;
+
+    this.defaultAlerts.push({
+      type: 'info',
+      msg: this.messageFromResolver
+    });
+
   }
 
   onClosed(dismissedAlert: any): void {
