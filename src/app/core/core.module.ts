@@ -6,8 +6,9 @@ import {LayoutComponent} from './components/layout/layout.component';
 import {NavbarComponent} from './components/navbar/navbar.component';
 import {HomeModule} from '@modules/home/home.module';
 import {RouterModule} from '@angular/router';
-import {HttpClientModule} from '@angular/common/http';
+import {HTTP_INTERCEPTORS, HttpClientModule} from '@angular/common/http';
 import {InitService} from '@core/services/init/init.service';
+import {LoggerInterceptorService} from '@core/interceptors/logger-interceptor.service';
 
 
 const COMPONENTS = [
@@ -39,7 +40,17 @@ export function init_app(initService: InitService) {
     ...MODULES
   ],
   providers: [
-    {provide: APP_INITIALIZER, useFactory: init_app, deps: [InitService], multi: true},
+    {
+      provide: APP_INITIALIZER,
+      useFactory: init_app,
+      deps: [InitService],
+      multi: true
+    },
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: LoggerInterceptorService,
+      multi: true
+    }
   ]
 })
 export class CoreModule {
