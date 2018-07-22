@@ -1,0 +1,20 @@
+<div class="space-30"></div>
+
+<div class="card" *ngIf="user">
+
+  <div class="card-header">
+    <a [href]="user.html_url" target="_blank">{{user.html_url}}</a>
+  </div>
+
+
+  <div class="card-body d-inline-block">
+
+    <img class="card-img-top w-25 m-1" [src]="user.avatar_url" [alt]="user.avatar_url">
+
+    <h5 class="card-title">{{user.name}}t</h5>
+    <p class="card-text">{{user.bio}}</p>
+
+  </div>
+</div>
+
+<div class="space-30"></div>

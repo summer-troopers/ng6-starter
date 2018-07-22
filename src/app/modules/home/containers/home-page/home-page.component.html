@@ -1,0 +1,11 @@
+<div class="space-30"></div>
+<div *ngFor="let alert of alerts">
+  <app-home-alert [alert]="alert" (onClose)="onClosed(alert)"></app-home-alert>
+</div>
+<div class="space-30"></div>
+
+<div class="row">
+  <div class="col-sm-6" *ngFor="let user of users">
+    <app-user-item [user]="user"></app-user-item>
+  </div>
+</div>
