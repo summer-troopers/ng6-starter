@@ -2,8 +2,8 @@ import {ModuleWithProviders} from '@angular/core';
 import {Routes, RouterModule} from '@angular/router';
 import {HomePageComponent} from '@modules/home/containers/home-page/home-page.component';
 import {ProfileDetailPageComponent} from '@modules/home/containers/profile-detail-page/profile-detail-page.component';
-import {AuthenticatedGuardService} from '@shared/guards/authenticated-guard.service';
-import {HomeResolverService} from '@modules/home/resolvers/home-resolver.service';
+import {AuthenticatedGuardService} from '@shared/guards/authenticated-guard/authenticated-guard.service';
+import {HomeResolverService} from '@modules/home/resolvers/home-resolver/home-resolver.service';
 
 const routes: Routes = [
   {

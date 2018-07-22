@@ -8,7 +8,7 @@ import {HomeModule} from '@modules/home/home.module';
 import {RouterModule} from '@angular/router';
 import {HTTP_INTERCEPTORS, HttpClientModule} from '@angular/common/http';
 import {InitService} from '@core/services/init/init.service';
-import {LoggerInterceptorService} from '@core/interceptors/logger-interceptor.service';
+import {LoggerInterceptorService} from '@core/interceptors/logger-interceptor/logger-interceptor.service';
 
 
 const COMPONENTS = [
@@ -23,7 +23,7 @@ const MODULES = [
 ];
 
 
-export function init_app(initService: InitService) {
+export function initAppFactory(initService: InitService) {
   return () => initService.getConfigurations();
 }
 
@@ -42,7 +42,7 @@ export function init_app(initService: InitService) {
   providers: [
     {
       provide: APP_INITIALIZER,
-      useFactory: init_app,
+      useFactory: initAppFactory,
       deps: [InitService],
       multi: true
     },
