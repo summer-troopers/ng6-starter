@@ -17,7 +17,6 @@ export class ApiService {
   /**
    * GET request
    * @param {string} path it doesn't need / in front of the end point
-   * @param {IRequestOptions} options options of the request like headers, body, etc.
    * @returns {Observable<any>}
    */
   public get(path: string, options?: any): Observable<any> {

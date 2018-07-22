@@ -1,7 +1,10 @@
 <div class="space-30"></div>
-<div *ngFor="let alert of alerts">
-  <app-home-alert [alert]="alert" (onClose)="onClosed(alert)"></app-home-alert>
-</div>
+
+<ng-container *ngIf="alerts">
+  <div *ngFor="let alert of alerts">
+    <app-home-alert [alert]="alert" (onClose)="onClosed(alert)"></app-home-alert>
+  </div>
+</ng-container>
 
 <div class="space-30"></div>
 
@@ -13,5 +16,5 @@
 
 
 <ng-template #loading>
-  <div>Loading...</div>
+  <div> <i class="fa fa-spinner"></i> Loading...</div>
 </ng-template>
