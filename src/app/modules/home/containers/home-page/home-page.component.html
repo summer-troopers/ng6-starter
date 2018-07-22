@@ -2,6 +2,7 @@
 <div *ngFor="let alert of alerts">
   <app-home-alert [alert]="alert" (onClose)="onClosed(alert)"></app-home-alert>
 </div>
+
 <div class="space-30"></div>
 
 <div class="row" *ngIf="users; else loading">

@@ -11,7 +11,8 @@
 
     <img class="card-img-top w-25 m-1" [src]="user.avatar_url" [alt]="user.avatar_url">
 
-    <h5 class="card-title">{{user.name}}t</h5>
+    <h5 class="card-title">{{user.name}}</h5>
+    <h5 class="card-title">{{user.name | reverseStr}}</h5>
     <p class="card-text">{{user.bio}}</p>
 
   </div>
