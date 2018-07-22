@@ -1,5 +1,5 @@
 <div class="card w-75">
-  <img class="card-img-top" [src]="user?.avatar_url" alt="Card image cap">
+  <img class="card-img-top" [appImgPreloader]="user?.avatar_url" alt="Card image cap">
   <div class="card-body">
     <h5 class="card-title">{{user?.login}}</h5>
     <p class="card-text">Score {{user?.score}}</p>

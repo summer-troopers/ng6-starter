@@ -2,6 +2,7 @@ import {NgModule} from '@angular/core';
 import {CommonModule} from '@angular/common';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {RouterModule} from '@angular/router';
+import {ImgPreloaderDirective} from '@shared/directives/img-preloader/img-preloader.directive';
 
 const MODULES = [
   CommonModule,
@@ -10,14 +11,21 @@ const MODULES = [
   ReactiveFormsModule
 ];
 
+const DIRECTIVES = [
+  ImgPreloaderDirective
+];
+
 @NgModule({
   imports: [
     ...MODULES
   ],
   exports: [
-    ...MODULES
+    ...MODULES,
+    ...DIRECTIVES
   ],
-  declarations: []
+  declarations: [
+    ...DIRECTIVES
+  ]
 })
 export class SharedModule {
 }
